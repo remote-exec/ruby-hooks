@@ -11,7 +11,7 @@ module Ruby::Hooks::InstanceHooks
 
   # define instance hook methog, it gives easy acces to Hook and
   # it's methods
-  def define_hook(name, options = nil)
+  def define_hook(name, options = {})
     define_method(name) do
       if hook = instance_variable_get(:"@#{name}")
       then return hook

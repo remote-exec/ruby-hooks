@@ -17,4 +17,9 @@ class Ruby::Hooks::Hook
     add_plugins( :extend, options[:extends])
   end
 
+  # allow writign code independent of the internals of Observable
+  def observers
+    @observer_peers
+  end
+
 end

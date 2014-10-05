@@ -56,21 +56,21 @@ succeeded, it is very simple to extend `Hook` using:
 module FindObserver
   def find_observer(*arg)
     result = nil
-    if defined? @observer_state and @observer_state
-      if defined? @observer_peers
+    if changed?
+      if observers
         result =
-        @observer_peers.find do |k, v|
+        observers.find do |k, v|
           k.send v, *arg
         end
       end
-      @observer_state = false
+      changed(false)
     end
-    result
+    result and result.first
   end
 end
 class Test2
   extend Ruby::Hooks::InstanceHooks
-  define_hook(:my_event_two, :extend => FindObserver)
+  define_hook(:my_event_two, :extends => FindObserver)
 end
 Test2.new.my_event_two.find_observer(*args)
 ```
