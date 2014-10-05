@@ -77,4 +77,10 @@ Test2.new.my_event_two.find_observer(*args)
 this way users are not limited by the standard functionalities of
 [Rubys Observable][rubys_observable].
 
+## Compatibility
+
+This librarys is tested with ruby `1.9.2+`, `jruby` and `rbx`.
+It works in limited scope on `1.8.7` - `Observable.add_observer` does
+not handle method parameter, so with only `update` hook is supported.
+
 [rubys_observable]: http://ruby-doc.org/stdlib-1.9.3/libdoc/observer/rdoc/Observable.html
