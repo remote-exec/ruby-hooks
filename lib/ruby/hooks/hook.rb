@@ -13,8 +13,8 @@ class Ruby::Hooks::Hook
   include ::Ruby::Hooks::Extensible
 
   # automatically extends Hook instance with given modules
-  # @options options [Array]  :extend array of modules to extend hook instance
-  # @options options [Module] :extend module to extend hook instance
+  # @option options [Array]  :extend array of modules to extend hook instance
+  # @option options [Module] :extend module to extend hook instance
   def initialize(options = {})
     @options = options
     add_plugins( :extend, options[:extends])

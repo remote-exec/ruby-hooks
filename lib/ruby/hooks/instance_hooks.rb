@@ -12,8 +12,9 @@ module Ruby::Hooks::InstanceHooks
   # define instance hook method, it gives easy acces to Hook and
   # it's methods
   #
-  # @param name [Symbol] name of the hook handling method to define
-  # @options options [Module] :extends - the module to extend hook instance
+  # @param  name    [Symbol] name of the hook handling method to define
+  # @param  options [Hash]   optional settigns for hook
+  # @option options [Module] :extends - the module to extend hook instance
   # @return [Method or Symbol] exactly what method definition would return
   def define_hook(name, options = {})
     define_method(name) do
