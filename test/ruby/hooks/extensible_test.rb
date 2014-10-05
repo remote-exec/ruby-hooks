@@ -55,11 +55,4 @@ describe Ruby::Hooks::Extensible do
     subject.calls.must_equal []
   end
 
-  it "throws exception" do
-    lambda {
-      subject.add_plugins :count, :symbols_not_supported
-    }.must_raise(Ruby::Hooks::UnsupportedPlugin, "Do not know how to handle count plugins: :symbols_not_supported")
-    subject.calls.must_be_empty
-  end
-
 end
