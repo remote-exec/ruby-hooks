@@ -6,6 +6,7 @@ See the file LICENSE for copying permission.
 
 module Ruby
   module Hooks
+    # Rubygems version of Ruby::Hooks
     VERSION = '0.0.1'
   end
 end

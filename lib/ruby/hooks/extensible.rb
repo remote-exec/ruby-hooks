@@ -12,6 +12,7 @@ module Ruby
     # Allow extending object with plugins(modules)
     module Extensible
 
+      # handle single parameters as well as arrays of params
       def add_plugins(method, plugins = nil)
         case plugins
         when Array then plugins.each { |plugin| send(method, plugin) }

@@ -14,8 +14,8 @@ module Ruby
 
       # define instance hook methog, it gives easy acces to Hook and
       # it's methods
-      def self.define_hook(name, options)
-        self.define_method(name) do
+      def define_hook(name, options = nil)
+        define_method(name) do
           if hook = instance_variable_get(:"@#{name}")
           then return hook
           end
