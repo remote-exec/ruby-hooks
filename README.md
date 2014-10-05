@@ -74,8 +74,38 @@ class Test2
 end
 Test2.new.my_event_two.find_observer(*args)
 ```
+
 this way users are not limited by the standard functionalities of
 [Rubys Observable][rubys_observable].
+
+## Defining the function manually
+
+`define_hook` is just a small wrapper equivalent to:
+
+
+```ruby
+require 'ruby/hooks/hook'
+
+def my_hook
+  @my_hook ||= Ruby::Hooks::Hook.new(:extends => MyAwesomeModule)
+end
+```
+
+It's more code and less magic, to exclude `ruby-hooks` this should work:
+
+```ruby
+require "observer"
+
+def my_hook
+  @my_hook ||= Object.new.tap do |hook|
+    hook.extend Observable
+    hook.extend MyAwesomeModule
+  end
+end
+```
+
+It has certain limitation - all the hooks will be of class `Object`, it
+makes reading code and backtraces harder.
 
 ## Compatibility
 
