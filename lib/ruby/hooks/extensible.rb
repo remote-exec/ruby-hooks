@@ -14,9 +14,9 @@ module Ruby
 
       def add_plugins(method, plugins = nil)
         case plugins
-        when Array  then plugins.each { |plugin| send(method, plugin) }
-        when nil    then true
-        else             send(method, plugins)
+        when Array then plugins.each { |plugin| send(method, plugin) }
+        when nil   then true
+        else            send(method, plugins)
         end
       end
 
