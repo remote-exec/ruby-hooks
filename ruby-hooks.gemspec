@@ -1,3 +1,13 @@
+#!/usr/bin/env ruby
+# -*- encoding: utf-8 -*-
+# stub: PLUGINATOR ruby lib
+
+=begin
+Copyright 2014 Michal Papis <mpapis@gmail.com>
+
+See the file LICENSE for copying permission.
+=end
+
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
@@ -16,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.description = 'Helpers for multiple publish/subscribe hooks'
 
   spec.add_development_dependency('rake')
+  spec.add_development_dependency("minitest")
 
   spec.files        = Dir.glob('lib/**/*.rb')
   spec.test_files   = Dir.glob('test/**/*.rb')
