@@ -34,9 +34,9 @@ describe Ruby::Hooks::Extensible do
   end
 
   it "extends self" do
-    subject.methods.wont_include :method_1
+    subject.methods.map(&:to_sym).wont_include :method_1
     subject.add_plugins :extend, ExtensibleTestClass::Extra
-    subject.methods.must_include :method_1
+    subject.methods.map(&:to_sym).must_include :method_1
     subject.calls.must_be_empty
   end
 
