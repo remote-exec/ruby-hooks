@@ -1,0 +1,26 @@
+require "ruby/hooks/hook"
+
+module Ruby
+  module Hooks
+
+    # Helper to add multiple instance hooks
+    module InstanceHooks
+
+      # define instance hook methog, it gives easy acces to Hook and
+      # it's methods
+      def self.define_hook(name, options)
+        self.define_method(name) do
+          if hook = instance_variable_get(:"@#{name}")
+          then return hook
+          end
+          hook = Ruby::Hooks::Hook.new(options)
+          instance_variable_set(:"@#{name}", hook)
+          hook
+        end
+      end
+
+    end
+
+  end
+end
+
