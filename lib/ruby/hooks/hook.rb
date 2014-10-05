@@ -7,21 +7,14 @@ See the file LICENSE for copying permission.
 require "observer"
 require "ruby/hooks/extensible"
 
-module Ruby
-  module Hooks
+# Wrapper for Observable module
+class Ruby::Hooks::Hook
+  include Observable
+  include ::Ruby::Hooks::Extensible
 
-    # Wrapper for Observable module
-    class Hook
-      include Observable
-      include ::Ruby::Hooks::Extensible
-
-      def initialize(options = {})
-        @options = options
-        add_plugins( :extend, options[:extends])
-      end
-
-    end
-
+  def initialize(options = {})
+    @options = options
+    add_plugins( :extend, options[:extends])
   end
-end
 
+end

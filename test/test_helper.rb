@@ -5,7 +5,6 @@ See the file LICENSE for copying permission.
 =end
 
 require 'rubygems'
-#require 'minitest'
 
 if
   RUBY_VERSION == "2.0.0" && # check Gemfile
@@ -26,8 +25,9 @@ then
   Coveralls.noisy = true unless ENV['CI']
 end
 
+# Autoload all lib/**/*.rb files so simplecov does not misses anything
+Dir[File.expand_path("../../lib/**/*.rb", __FILE__)].each{|f| require f }
+
 require 'minitest/autorun' unless $0=="-e" # skip in guard
 require 'minitest/unit'
 
-# Autoload all lib/**/*.rb files so simplecov does not misses anything
-Dir[File.expand_path("../../lib/**/*.rb", __FILE__)].each{|f| require f }
