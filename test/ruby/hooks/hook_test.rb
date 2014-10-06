@@ -4,8 +4,8 @@ Copyright 2014 Michal Papis <mpapis@gmail.com>
 See the file LICENSE for copying permission.
 =end
 
-require 'test_helper'
-require 'ruby/hooks/hook'
+require "test_helper"
+require "ruby/hooks/hook"
 
 class HookTestClass
   module Extra

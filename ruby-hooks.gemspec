@@ -8,26 +8,26 @@ Copyright 2014 Michal Papis <mpapis@gmail.com>
 See the file LICENSE for copying permission.
 =end
 
-lib = File.expand_path('../lib/', __FILE__)
+lib = File.expand_path("../lib/", __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'ruby/hooks/version'
+require "ruby/hooks/version"
 
 Gem::Specification.new do |spec|
-  spec.name        = 'ruby-hooks'
+  spec.name        = "ruby-hooks"
   spec.version     = ::Ruby::Hooks::VERSION
-  spec.licenses    = ['MIT']
+  spec.licenses    = ["MIT"]
 
-  spec.authors     = ['Michal Papis']
-  spec.email       = ['mpapis@gmail.com']
+  spec.authors     = ["Michal Papis"]
+  spec.email       = ["mpapis@gmail.com"]
 
-  spec.homepage    = 'https://github.com/remote-exec/ruby-hooks'
+  spec.homepage    = "https://github.com/remote-exec/ruby-hooks"
   spec.summary     =
-  spec.description = 'Helpers for multiple publish/subscribe hooks'
+  spec.description = "Helpers for multiple publish/subscribe hooks"
 
-  spec.add_development_dependency('rake')
+  spec.add_development_dependency("rake")
   spec.add_development_dependency("minitest")
 
-  spec.files        = Dir.glob('lib/**/*.rb')
-  spec.test_files   = Dir.glob('test/**/*.rb')
+  spec.files        = Dir.glob("lib/**/*.rb")
+  spec.test_files   = Dir.glob("test/**/*.rb")
 end
