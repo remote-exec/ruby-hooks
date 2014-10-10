@@ -110,7 +110,5 @@ makes reading code and backtraces harder.
 ## Compatibility
 
 This librarys is tested with ruby `1.9.2+`, `jruby` and `rbx`.
-It works in limited scope on `1.8.7` - `Observable.add_observer` does
-not handle method parameter, so with only `update` hook is supported.
 
 [rubys_observable]: http://ruby-doc.org/stdlib-1.9.3/libdoc/observer/rdoc/Observable.html
