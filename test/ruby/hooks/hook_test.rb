@@ -12,6 +12,12 @@ class HookTestClass
     def method_2
     end
   end
+  class Update
+    attr_reader :value
+    def update(value)
+      @value = value
+    end
+  end
 end
 
 describe Ruby::Hooks::Hook do
@@ -27,6 +33,30 @@ describe Ruby::Hooks::Hook do
     subject.send :initialize
     subject.methods.map(&:to_sym).wont_include :method_2
   end
+
+  describe "observer interaction" do
+
+    let(:observer) do
+      HookTestClass::Update.new
+    end
+
+    it "gives access to observers" do
+      subject.send :initialize
+      subject.methods.map(&:to_sym).must_include :observers
+      subject.observers.must_be_empty
+      subject.add_observer(observer)
+      subject.observers.must_equal({observer => :update})
+    end
+
+    it "allows fast execution" do
+      subject.send :initialize
+      subject.methods.map(&:to_sym).must_include :changed_and_notify
+      subject.add_observer(observer)
+      subject.changed_and_notify(7)
+      observer.value.must_equal(7)
+    end
+
+  end # context "observer interaction"
 
   it "extends self" do
     subject.methods.map(&:to_sym).wont_include :method_2
