@@ -45,6 +45,7 @@ test.my_event_one.add_observer(object1)       # changes will call object1.update
 test.my_event_one.add_observer(object2, :log) # changes will call object2.log
 test.my_event_one.change                      # mark as changed, can be called multiple times
 test.my_event_one.notify_observers(*args)     # run the observers methods with given args
+test.my_event_one.change_and_notify(*args)    # mark as changed and run the observers methods with given args
 ```
 
 ## Writing your own notifier
