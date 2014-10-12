@@ -5,7 +5,7 @@ See the file LICENSE for copying permission.
 =end
 
 require "test_helper"
-require "ruby/hooks/hook"
+require "ruby-hooks/hook"
 
 class HookTestClass
   module Extra
@@ -20,9 +20,9 @@ class HookTestClass
   end
 end
 
-describe Ruby::Hooks::Hook do
+describe RubyHooks::Hook do
   subject do
-    Ruby::Hooks::Hook.allocate
+    RubyHooks::Hook.allocate
   end
 
   it "is based on Observable" do

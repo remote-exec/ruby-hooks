@@ -4,10 +4,10 @@ Copyright 2014 Michal Papis <mpapis@gmail.com>
 See the file LICENSE for copying permission.
 =end
 
-require "ruby/hooks/hook"
+require "ruby-hooks/hook"
 
 # Helper to add multiple instance hooks
-module Ruby::Hooks::InstanceHooks
+module RubyHooks::InstanceHooks
 
   # define instance hook method, it gives easy acces to Hook and
   # it's methods
@@ -21,7 +21,7 @@ module Ruby::Hooks::InstanceHooks
       if hook = instance_variable_get(:"@#{name}")
       then return hook
       end
-      hook = Ruby::Hooks::Hook.new(options)
+      hook = RubyHooks::Hook.new(options)
       instance_variable_set(:"@#{name}", hook)
       hook
     end

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # -*- encoding: utf-8 -*-
-# stub: PLUGINATOR ruby lib
+# stub: ruby-hooks ruby lib
 
 =begin
 Copyright 2014 Michal Papis <mpapis@gmail.com>
@@ -11,11 +11,11 @@ See the file LICENSE for copying permission.
 lib = File.expand_path("../lib/", __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require "ruby/hooks/version"
+require "ruby-hooks/version"
 
 Gem::Specification.new do |spec|
   spec.name        = "ruby-hooks"
-  spec.version     = ::Ruby::Hooks::VERSION
+  spec.version     = ::RubyHooks::VERSION
   spec.licenses    = ["MIT"]
 
   spec.authors     = ["Michal Papis"]

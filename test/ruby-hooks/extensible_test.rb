@@ -5,10 +5,10 @@ See the file LICENSE for copying permission.
 =end
 
 require "test_helper"
-require "ruby/hooks/extensible"
+require "ruby-hooks/extensible"
 
 class ExtensibleTestClass
-  include Ruby::Hooks::Extensible
+  include RubyHooks::Extensible
   attr_reader :calls
   def initialize
     @calls = []
@@ -28,7 +28,7 @@ class ExtensibleTestClass
   end
 end
 
-describe Ruby::Hooks::Extensible do
+describe RubyHooks::Extensible do
   subject do
     ExtensibleTestClass.new
   end

@@ -5,10 +5,10 @@ See the file LICENSE for copying permission.
 =end
 
 require "test_helper"
-require "ruby/hooks"
+require "ruby-hooks"
 
 class Test1
-  extend Ruby::Hooks::InstanceHooks
+  extend RubyHooks::InstanceHooks
   define_hook(:my_event_one)
 end
 
@@ -26,7 +26,7 @@ class Observer2
   end
 end
 
-describe Ruby::Hooks::Extensible do
+describe RubyHooks::Extensible do
   subject do
     Test1.new
   end

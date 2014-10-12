@@ -5,7 +5,7 @@ See the file LICENSE for copying permission.
 =end
 
 require "test_helper"
-require "ruby/hooks"
+require "ruby-hooks"
 
 module FindObserver
   def find_observer(*arg)
@@ -24,7 +24,7 @@ module FindObserver
 end
 
 class Test2
-  extend Ruby::Hooks::InstanceHooks
+  extend RubyHooks::InstanceHooks
   define_hook(:my_event_two, :extends => FindObserver)
 end
 
@@ -40,7 +40,7 @@ class Observer4
   end
 end
 
-describe Ruby::Hooks::Extensible do
+describe RubyHooks::Extensible do
   subject do
     Test2.new
   end
