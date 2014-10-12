@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.summary     =
   spec.description = "Helpers for multiple publish/subscribe hooks"
 
+  spec.add_dependency("yard-ruby-hooks", "~>1.0")
   spec.add_development_dependency("rake")
   spec.add_development_dependency("minitest")
 

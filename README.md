@@ -48,6 +48,43 @@ test.my_event_one.notify_observers(*args)     # run the observers methods with g
 test.my_event_one.change_and_notify(*args)    # mark as changed and run the observers methods with given args
 ```
 
+## Documenting the hooks
+
+`ruby-hooks` comes with a support gem that allows to write `yard` docs
+for the hooks.
+
+To automatically use the plugin add `--plugin ruby-hooks` to projects
+root directory `.yardopts` file.
+
+Example documentation:
+
+```ruby
+# called before executing command
+# @notify_param object [Object] the target that invoked the method
+# @notify_param stdout [String] standard output of the command, can be nil
+# @notify_param stderr [String] standard error output of the command, can be nil
+define_hook :on_execute_data
+```
+
+All hooks will be listed in `Hooks` section of the documentation, and
+the generated hook description will look roughly like this:
+
+```ruby
+` - (Hook) on_execute_data`
+
+called before executing command
+
+**Returns:**
+
+- (`Hook`) — the Observable instance
+
+Hook#notify_objects block params:
+
+- **object** (`Object`) — the target that invoked the method
+- **stdout** (`String`) — standard output of the command, can be nil
+- **stderr** (`String`) — standard error output of the command, can be nil
+```
+
 ## Writing your own notifier
 
 Default `notify_observers` has no feedback in regard if the calls
