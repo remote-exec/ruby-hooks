@@ -143,7 +143,8 @@ end
 ```
 
 It has certain limitation - all the hooks will be of class `Object`, it
-makes reading code and backtraces harder.
+makes reading code and backtraces harder and you can not use the
+documentation helper with `@notify_param`.
 
 ## Compatibility
 
