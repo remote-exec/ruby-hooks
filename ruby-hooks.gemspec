@@ -22,12 +22,13 @@ Gem::Specification.new do |spec|
   spec.email       = ["mpapis@gmail.com"]
 
   spec.homepage    = "https://github.com/remote-exec/ruby-hooks"
-  spec.summary     =
-  spec.description = "Helpers for multiple publish/subscribe hooks"
+  spec.summary     = "Helpers for multiple publish/subscribe hooks"
 
-  spec.add_dependency("yard-ruby-hooks", "~>1.0")
-  spec.add_development_dependency("rake")
-  spec.add_development_dependency("minitest")
+  spec.required_ruby_version = ">=1.9.3"
+
+  spec.add_dependency("yard-ruby-hooks",      "~>1.0")
+  spec.add_development_dependency("minitest", "~>5.4")
+  spec.add_development_dependency("rake",     "~>10.3")
 
   spec.files        = Dir.glob("lib/**/*.rb")
   spec.test_files   = Dir.glob("test/**/*.rb")
