@@ -5,7 +5,9 @@
 [![Dependency Status](https://gemnasium.com/remote-exec/ruby-hooks.png)](https://gemnasium.com/remote-exec/ruby-hooks)
 [![Code Climate](https://codeclimate.com/github/remote-exec/ruby-hooks.png)](https://codeclimate.com/github/remote-exec/ruby-hooks)
 [![Coverage Status](https://img.shields.io/coveralls/remote-exec/ruby-hooks.svg)](https://coveralls.io/r/remote-exec/ruby-hooks?branch=master)
-[![Inline docs](http://inch-ci.org/github/remote-exec/ruby-hooks.png)](http://inch-ci.org/github/remote-exec/ruby-hooks)
+[![Docs Coverage](http://inch-ci.org/github/remote-exec/ruby-hooks.png)](http://inch-ci.org/github/remote-exec/ruby-hooks)
+[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://rubydoc.info/github/remote-exec/ruby-hooks/master/frames)
+[![Github Code](http://img.shields.io/badge/github-code-blue.svg)](https://github.com/remote-exec/ruby-hooks)
 
 Helpers for multiple publish/subscribe hooks using
 [Rubys Observable][rubys_observable].
@@ -69,7 +71,7 @@ define_hook :on_execute_data
 All hooks will be listed in `Hooks` section of the documentation, and
 the generated hook description will look roughly like this:
 
-```ruby
+```markdown
 ` - (Hook) on_execute_data`
 
 called before executing command
