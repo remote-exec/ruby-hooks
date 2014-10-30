@@ -7,6 +7,5 @@ See the file LICENSE for copying permission.
 # Helpers for multiple publish/subscribe hooks
 module RubyHooks
   # version of ruby-hooks gem
-  VERSION = "1.2.0"
+  VERSION = "1.2.1"
 end
-
