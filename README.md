@@ -80,7 +80,7 @@ called before executing command
 
 - (`Hook`) — the Observable instance
 
-Hook#notify_objects block params:
+Hook#notify_observers block params:
 
 - **object** (`Object`) — the target that invoked the method
 - **stdout** (`String`) — standard output of the command, can be nil
