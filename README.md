@@ -32,11 +32,11 @@ and install with:
 require "ruby/hooks"
 
 class Test1
-  extend Ruby::Hooks::InstanceHooks
+  extend RubyHooks::InstanceHooks
   define_hook(:my_event_one)
 end
 test = Test1.new
-test.my_event_one # => Ruby::Hooks::Hook
+test.my_event_one # => RubyHooks::Hook
 ```
 
 `Hook` has all methods of [Rubys Observable][rubys_observable] use it
@@ -109,7 +109,7 @@ module FindObserver
   end
 end
 class Test2
-  extend Ruby::Hooks::InstanceHooks
+  extend RubyHooks::InstanceHooks
   define_hook(:my_event_two, :extends => FindObserver)
 end
 Test2.new.my_event_two.find_observer(*args)
@@ -127,7 +127,7 @@ this way users are not limited by the standard functionalities of
 require "ruby/hooks/hook"
 
 def my_hook
-  @my_hook ||= Ruby::Hooks::Hook.new(:extends => MyAwesomeModule)
+  @my_hook ||= RubyHooks::Hook.new(:extends => MyAwesomeModule)
 end
 ```
 
