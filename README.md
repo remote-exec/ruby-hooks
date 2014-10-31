@@ -29,7 +29,7 @@ and install with:
 ## Usage
 
 ```ruby
-require "ruby/hooks"
+require "ruby-hooks"
 
 class Test1
   extend RubyHooks::InstanceHooks
@@ -124,7 +124,7 @@ this way users are not limited by the standard functionalities of
 
 
 ```ruby
-require "ruby/hooks/hook"
+require "ruby-hooks/hook"
 
 def my_hook
   @my_hook ||= RubyHooks::Hook.new(:extends => MyAwesomeModule)
